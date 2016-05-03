@@ -4,7 +4,7 @@ header-img: img/home-bg.png
 email: kevinromoser@gmail.com
 copyright_name: kromoser
 description: > # this means to ignore newlines until "baseurl:"
-  Thoughts about programming, designing, learning, and the nature of life.
+  Thoughts about programming, designing, and the nature of life.
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  kromoser
