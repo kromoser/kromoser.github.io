@@ -5,7 +5,7 @@ date:   2016-05-11 08:45:44 -0400
 ---
 
 
-I am a graphic designer, and for a while now, a big portion of my work has been web design. I make websites that are pretty static, but elegantly simple. I taught myself HTML and CSS after graduating with a studio art degree and felt I needed a portfolio site to show [the weird hand-drawn animations]("http://vimeo.com/kromoser") I had made. Thus began years of lurking on StackOverflow, and reading tons of [CSS tricks]("http://css-tricks.com"). And I've certainly loved learning it all, as challenging as it can be.
+I am a graphic designer, and for a while now, a big portion of my work has been web design. I make websites that are pretty static, but elegantly simple. I taught myself HTML and CSS after graduating with a studio art degree and felt I needed a portfolio site to show [the weird hand-drawn animations]("http://vimeo.com/kromoser) I had made. Thus began years of lurking on StackOverflow, and reading tons of [CSS tricks](http://css-tricks.com"). And I've certainly loved learning it all, as challenging as it can be.
 
 One idea has always troubled me, though. The idea of UX design. Isn't all design user experience design? When a book designer chooses a paper stock for a cover, that's UX design. When a furniture designer chooses a fabric that you'll be sitting on, that's user experience design. And so is everything else that went into that chair, from the initial sketches to the last piece of hardware put in place. I don't think user experience design is a discipline to be laid on top of other design practices. Rather, it emerges from the building of a thing. In the thoughtful act of its creation comes the experience of using it.
 
