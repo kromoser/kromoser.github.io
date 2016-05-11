@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  UX Design or: How I Learned to Stop Worrying and Love the Code
-date:   2016-05-11 12:45:44 +0000
+date:   2016-05-11 08:45:44 -0400
 ---
 
 
