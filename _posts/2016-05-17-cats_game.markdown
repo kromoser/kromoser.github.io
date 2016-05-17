@@ -41,7 +41,7 @@ That covered basic strategy, I just finished up with some first move logic, movi
 
 It took me a while to get here, and I'm sure my code could be more elegant. For example, in my `#defend` method, I would like to be able to abstractly check for any 2 of the 3 conditions, but I couldn't figure out a way to do it simply. Also, I don't love using `break` in this method, but it was the only way I could think for the loop to not return the initial array. I'm not totally sure it's an unbeatable AI, but I think it works! At least, all of my games with the computer have been Cats' Games!
 
-On a final note, there's no real consensus as to why a tie in Tic Tac Toe is called a Cat's Game, but here's a short listen about how cats are often associated with the game in a cultures around the world. Enjoy!
+On a final note, there's no real consensus as to why a tie in Tic Tac Toe is called a Cat's Game, but here's a short listen about how cats are often associated with the game in cultures around the world. Enjoy!
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/64166817&amp;color=ff7700&amp;show_artwork=false"></iframe>
 
