@@ -1,0 +1,47 @@
+---
+layout: post
+title:  Cat's Game
+date:   2016-05-17 05:20:07 +0000
+---
+
+I recently completed the Ruby Tic Tac Toe with AI lab for my Learn Verified web development program. The goal is to create a CLI Tic Tac Toe game that can be played by 0, 1, or 2 players, and to endow the computer player with some form of gameplay strategy. Since Tic Tac Toe is unwinnable when played perfectly, the AI should, ideally, always produce a "Cat's Game," that is, a tie.
+
+Programming the mechanics of the gameplay wasn't too difficult. I had one major stumbling block, a block I kept slamming my head into again and again, when I was coding the `#turn` method. The game was playable when I dropped into `pry` but my tests were failing, and I couldn't, for the life of me, see what was wrong. I finally realized I had been super lazy when writing the method to check whether the game was over. Fixed that, and I was back on track.
+
+The real logical challenge came when trying to design the computer player's strategy. I love thinking about things like this. As kids, we all learn how to play a perfect Tic Tac Toe game, but once we learn it, do we understand why it works? A well-designed Tic Tac Toe strategy, like all well-designed things, seems intuitive and natural, but actually lies on top of a structure of careful decisions and logic.
+
+I started with the most basic, least-intelligent strategy, picking a random move, and use that as a fallback in case no other condition triggered a valid move:
+
+``` 
+def random_move
+  Random.new.rand(1..9).to_s
+end 
+```
+
+Before resorting to a random move, I figured the computer should block the other player if they already have two out of three spaces filled in a row, column, or diagonal. Of course, I could explicitly tell the computer player where to go in each of those circumstances, but that would be rather inelegant. I already had a nested array of win combinations, so I decided to iterate through those combinations, and check to see if the other player's token was in any two of the three spaces represented by the win combination's values. If true, the computer should place it's own token in the third space:
+
+```
+def defend
+  WIN_COMBINATIONS.each do |combo|
+    if @board.cells[combo[0]] == other_player && @board.cells[combo[1]] == other_player && @board.cells[combo[2]] != token
+     break "#{combo[2] + 1}"
+    elsif @board.cells[combo[1]] == other_player && @board.cells[combo[2]] == other_player && @board.cells[combo[0]] != token
+     break "#{combo[0] + 1}"
+    elsif @board.cells[combo[0]] == other_player && @board.cells[combo[2]] == other_player && @board.cells[combo[1]] != token
+     break "#{combo[1] + 1}"
+    else 
+   end
+  end
+end
+```
+
+But before it blocks the other player, the computer should check if it is able to win! This is just the inverse of my `#defend` method. If the computer player's own token is any two of the three spaces in a row, it should of course try to place its own token in the third.
+
+That covered basic strategy, I just finished up with some first move logic, moving to the middle or a corner, and then a few basic rules to prevent what I call the "corner trap". Say there's an X in the upper left square, an O in the middle square, and an X in the bottom right square. If O moves to a remaining corner, X will move to the fourth corner, and sets up two possible ways to win. To avoid this, the AI should check for that initial diagonal condition, and if it's present should force a block by moving to non-corner space.
+
+It took me a while to get here, and I'm sure my code could be more elegant. For example, in my `#defend` method, I would like to be able to abstractly check for any 2 of the 3 conditions, but I couldn't figure out a way to do it simply. Also, I don't love using `break` in this method, but it was the only way I could think for the loop to not return the initial array. I'm not totally sure it's an unbeatable AI, but I think it works! At least, all of my games with the computer have been Cats' Games!
+
+On a final note, there's no real consensus as to why a tie in Tic Tac Toe is called a Cat's Game, but here's a short listen about how cats are often associated with the game in a cultures around the world. Enjoy!
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/64166817&amp;color=ff7700&amp;show_artwork=false"></iframe>
+
