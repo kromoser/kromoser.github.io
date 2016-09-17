@@ -7,10 +7,10 @@ date: 2016-09-17 10:52:00 +4000
 In [my last post](http://kromoser.github.io/2016/08/31/user_has_many_recipes_needs_a_way_to_store_them/), I discussed the issues and questions around the conception and design of my first Sinatra application, a simple way to store recipes from around the web. The basic way the app works is a user logins in or signs up and then can create, edit or delete recipes, each of which has a title, url, ingredients, and categories. And of course, a user can only modify or delete her own recipes.
 
 The basic database structure of the app is as follows:
-  - A user `has_many` recipes; a recipe `belongs_to` a user.
-  - A recipe `has_many` ingredients and an ingredient `has_many` recipes.
-  - A recipe `has_many` categories and a category `has_many` recipes.
-  - A user `has_many` ingredients and categories through recipes.
+ - A user `has_many` recipes; a recipe `belongs_to` a user.
+ - A recipe `has_many` ingredients and an ingredient `has_many` recipes.
+ - A recipe `has_many` categories and a category `has_many` recipes.
+ - A user `has_many` ingredients and categories through recipes.
 
 And the basic user interface is:
   -Users can login and sign up.
